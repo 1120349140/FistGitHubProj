@@ -1,0 +1,32 @@
+PS:
+initialPoolSize:当池初始化时能建立的物理连接的数目
+maxIdleTime:持续时间，以秒计，指一个闲置的物理连接在被关闭前能在池中停留的时间
+maxPoolSize:池能包含的物理连接的最大数目。零指没有最大值。
+minPoolSize池能包含的物理连接的最小数目。
+maxStatements:连接池能保持打开的语句数量
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+   <!--默认配置-->
+    <default-config>  
+        <property name="initialPoolSize">10</property> 
+        <property name="maxIdleTime">30</property>  
+        <property name="maxPoolSize">100</property>  
+        <property name="minPoolSize">10</property>  
+        <property name="maxStatements">200</property>  
+    </default-config>  
+  
+   <!--配置连接池mysql-->
+    <named-config name="mysql">  
+        <property name="driverClass">com.mysql.jdbc.Driver</property>  
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/CoupleSpace</property>  
+        <property name="user">root</property>  
+        <property name="password">root</property>  
+        <property name="initialPoolSize">10</property>  
+        <property name="maxIdleTime">30</property>  
+        <property name="maxPoolSize">100</property>  
+        <property name="minPoolSize">10</property>  
+        <property name="maxStatements">200</property>  
+    </named-config>  
+</c3p0-config>
